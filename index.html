@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anduril Warship - Next Generation Naval Defense</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a, #1a1a2e);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            padding: 20px 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #00ff88;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600"><rect fill="%23001122" width="1000" height="600"/><path fill="%2300ff88" opacity="0.1" d="M0 300L50 283.3C100 266.7 200 233.3 300 250C400 266.7 500 333.3 600 316.7C700 300 800 200 850 150L900 100V0H850C800 0 700 0 600 0C500 0 400 0 300 0C200 0 100 0 50 0H0V300Z"/></svg>') center/cover;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #00ff88, #0099ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 20px #00ff88); }
+            to { filter: drop-shadow(0 0 30px #0099ff); }
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(45deg, #00ff88, #0099ff);
+            color: #000;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 255, 136, 0.3);
+        }
+        
+        .features {
+            padding: 100px 0;
+            background: rgba(255, 255, 255, 0.02);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .feature-card {
+            padding: 30px;
+            background: rgba(0, 255, 136, 0.1);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: #00ff88;
+        }
+        
+        .feature-card h3 {
+            color: #00ff88;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .specs {
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .spec-item {
+            padding: 20px;
+            background: rgba(0, 153, 255, 0.1);
+            border-radius: 10px;
+        }
+        
+        .spec-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #0099ff;
+            display: block;
+        }
+        
+        .section-title {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ffffff, #00ff88);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        footer {
+            padding: 50px 0;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.8);
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.1rem; }
+            .section-title { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Anduril Industries</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Next-Gen Warship</h1>
+            <p>Autonomous Naval Defense Platform</p>
+            <a href="#features" class="cta-button">Explore Technology</a>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Advanced Capabilities</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>🤖 Autonomous Systems</h3>
+                    <p>AI-powered navigation and threat detection systems that operate independently while maintaining human oversight and control.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>⚡ Advanced Propulsion</h3>
+                    <p>Next-generation hybrid propulsion system enabling silent running and maximum operational range.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🛡️ Defensive Suite</h3>
+                    <p>Multi-layered defense systems including electronic warfare capabilities and kinetic countermeasures.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🎯 Precision Targeting</h3>
+                    <p>Advanced sensor fusion and targeting systems for maximum accuracy in complex environments.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔗 Network Integration</h3>
+                    <p>Seamless integration with existing naval command and control infrastructure.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔧 Modular Design</h3>
+                    <p>Flexible architecture allowing for mission-specific configuration and rapid capability updates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="specs">
+        <div class="container">
+            <h2 class="section-title">Technical Specifications</h2>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <span class="spec-number">400+</span>
+                    <span>Nautical Miles Range</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-number">45+</span>
+                    <span>Knots Max Speed</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-number">30</span>
+                    <span>Days Autonomous</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-number">360°</span>
+                    <span>Threat Detection</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Anduril Industries. Advanced Defense Technology.</p>
+            <p>Building the Future of Naval Defense</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add parallax effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.hero');
+            const speed = scrolled * 0.5;
+            parallax.style.transform = `translateY(${speed}px)`;
+        });
+    </script>
+</body>
+</html>
